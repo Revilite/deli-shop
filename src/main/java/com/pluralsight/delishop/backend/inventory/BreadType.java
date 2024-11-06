@@ -1,6 +1,6 @@
 package com.pluralsight.delishop.backend.inventory;
 
-public enum BreadTypes {
+public enum BreadType {
     WHITE,
     WHEAT,
     RYE,
