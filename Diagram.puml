@@ -1,0 +1,52 @@
+@startuml
+class com.pluralsight.delishop.backend.PremiumTopping {
+}
+abstract class com.pluralsight.delishop.backend.Addon {
+}
+class com.pluralsight.delishop.backend.Sandwich {
+- ArrayList<Topping> toppings
+- boolean isToasted
+- BreadType breadType
+- SandwichSize sandwichSize
+}
+
+abstract class com.pluralsight.delishop.backend.Product {
+- double totalPrice
+- String name
+- int id
++ double updatePrice()
+}
+
+
+class com.pluralsight.delishop.backend.Cheese {
+- Cheese typeOfCheese
+}
+
+class com.pluralsight.delishop.backend.Chips {
+}
+class com.pluralsight.delishop.backend.Drink {
+- DrinkSize drinkSize
+}
+
+class com.pluralsight.delishop.backend.RegularTopping {
+}
+class com.pluralsight.delishop.backend.Meat {
+- Meat typeOfMeat
+}
+
+abstract class com.pluralsight.delishop.backend.Topping {
+- boolean hasExtra
+- double price
+}
+
+
+
+com.pluralsight.delishop.backend.Topping <|-- com.pluralsight.delishop.backend.PremiumTopping
+com.pluralsight.delishop.backend.Product <|-- com.pluralsight.delishop.backend.Addon
+com.pluralsight.delishop.backend.Product <|-- com.pluralsight.delishop.backend.Sandwich
+com.pluralsight.delishop.backend.PremiumTopping <|-- com.pluralsight.delishop.backend.Cheese
+com.pluralsight.delishop.backend.Addon <|-- com.pluralsight.delishop.backend.Chips
+com.pluralsight.delishop.backend.Addon <|-- com.pluralsight.delishop.backend.Drink
+com.pluralsight.delishop.backend.Topping <|-- com.pluralsight.delishop.backend.RegularTopping
+com.pluralsight.delishop.backend.PremiumTopping <|-- com.pluralsight.delishop.backend.Meat
+@enduml
