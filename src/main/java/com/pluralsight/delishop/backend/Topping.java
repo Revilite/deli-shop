@@ -1,12 +1,15 @@
 package com.pluralsight.delishop.backend;
 
+import com.pluralsight.delishop.backend.inventory.SandwichSize;
+
 public abstract class Topping {
 
-    private boolean hasExtra;
-    private double price;
+    protected boolean hasExtra;
+    protected SandwichSize size;
 
-    public Topping(boolean hasExtra, double price) {
+    public Topping(boolean hasExtra, SandwichSize size) {
         this.hasExtra = hasExtra;
-        this.price = price;
+        this.size = size;
     }
+
 }

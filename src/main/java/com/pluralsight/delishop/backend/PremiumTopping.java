@@ -1,8 +1,13 @@
 package com.pluralsight.delishop.backend;
 
-public class PremiumTopping extends Topping {
+import com.pluralsight.delishop.backend.inventory.SandwichSize;
 
-    public PremiumTopping(boolean hasExtra, double price) {
-        super(hasExtra, price);
+public abstract class PremiumTopping extends Topping {
+    double price;
+    public PremiumTopping(boolean hasExtra, SandwichSize size) {
+        super(hasExtra, size);
     }
+
+    public abstract double getPrice();
+
 }

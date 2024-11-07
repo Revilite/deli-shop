@@ -1,8 +1,13 @@
 package com.pluralsight.delishop.backend.inventory;
 
 public enum BreadType {
-    WHITE,
-    WHEAT,
-    RYE,
-    WRAP
+    WHITE("White"),
+    WHEAT("Wheat"),
+    RYE("Rye"),
+    WRAP("Wrap");
+
+    String type;
+    BreadType(String type){
+        this.type = type;
+    }
 }
