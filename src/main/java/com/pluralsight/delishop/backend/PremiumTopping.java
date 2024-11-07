@@ -8,6 +8,4 @@ public abstract class PremiumTopping extends Topping {
         super(hasExtra, size);
     }
 
-    public abstract double getPrice();
-
 }

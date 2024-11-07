@@ -6,7 +6,7 @@ import com.pluralsight.delishop.backend.inventory.TypeOfCheese;
 public class Cheese extends PremiumTopping {
     private TypeOfCheese typeOfCheese;
 
-    public Cheese(boolean hasExtra, SandwichSize size, TypeOfCheese typeOfCheese) {
+    public Cheese(TypeOfCheese typeOfCheese, SandwichSize size, boolean hasExtra) {
         super(hasExtra, size);
         this.typeOfCheese = typeOfCheese;
     }

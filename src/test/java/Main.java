@@ -45,7 +45,7 @@ public class Main {
 
             switch (userInput) {
                 case (1):
-                    order.addSandwich(addSandwich());
+                    order.addItem(addSandwich());
                     break;
                 case (2):
                     addDrink();
@@ -57,7 +57,7 @@ public class Main {
                     checkout();
                     break;
                 default:
-                    System.out.println(order.printOrder());
+                    System.out.println(order.getTotalPrice());
                     return;
             }
 
@@ -101,7 +101,7 @@ public class Main {
             System.out.println("is there extra?");
             String hasExtra = scan.nextLine();
 
-            sandwich.addTopping(new Cheese(hasExtra.equalsIgnoreCase("yes") ? true : false, sandwich.getSandwichSize(), typeOfCheese));
+            sandwich.addTopping(new Cheese(typeOfCheese, sandwich.getSandwichSize(), hasExtra.equalsIgnoreCase("yes") ? true : false));
 
             System.out.println("Is that all?");
             if (scan.nextLine().equalsIgnoreCase("yes")) {

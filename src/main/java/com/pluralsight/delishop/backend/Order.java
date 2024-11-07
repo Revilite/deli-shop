@@ -7,19 +7,20 @@ public class Order {
     private double totalPrice;
 
     public Order() {
-    totalPrice = 0;
-    items = new ArrayList<>();
+        totalPrice = 0;
+        items = new ArrayList<>();
     }
 
-    public void addItem(Product item){
+    public void addItem(Product item) {
         items.add(item);
     }
 
     public Order printOrder() {
         return this;
     }
-    public double getTotalPrice(){
-        for(Product item : items){
+
+    public double getTotalPrice() {
+        for (Product item : items) {
             totalPrice += item.getPrice();
         }
         return totalPrice;

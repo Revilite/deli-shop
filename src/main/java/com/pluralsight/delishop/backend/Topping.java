@@ -12,4 +12,7 @@ public abstract class Topping {
         this.size = size;
     }
 
+    public abstract double getPrice();
+
+
 }

@@ -6,7 +6,7 @@ import com.pluralsight.delishop.backend.inventory.SandwichSize;
 public class Meat extends PremiumTopping {
     protected Meat typeOfMeat;
 
-    public Meat(boolean hasExtra, Meat typeOfMeat, SandwichSize size) {
+    public Meat(Meat typeOfMeat, SandwichSize size, boolean hasExtra) {
         super(hasExtra, size);
         this.typeOfMeat = typeOfMeat;
     }
