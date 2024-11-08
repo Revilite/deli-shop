@@ -1,8 +1,4 @@
 package com.pluralsight.delishop.backend;
 
-public abstract class Addon extends Product {
-
-    public Addon() {
-    }
-
+public interface Addon extends Product {
 }

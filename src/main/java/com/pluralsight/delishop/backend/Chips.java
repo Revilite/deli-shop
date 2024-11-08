@@ -1,6 +1,6 @@
 package com.pluralsight.delishop.backend;
 
-public class Chips extends Addon {
+public class Chips implements Addon {
     protected String name;
 
     public Chips(String name) {

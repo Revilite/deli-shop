@@ -5,7 +5,7 @@ import com.pluralsight.delishop.backend.inventory.SandwichSize;
 
 import java.util.ArrayList;
 
-public class Sandwich extends Product {
+public class Sandwich implements Product {
     protected ArrayList<Topping> toppings = new ArrayList<>();
     protected boolean isToasted;
     protected BreadType breadType;

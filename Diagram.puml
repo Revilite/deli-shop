@@ -1,43 +1,76 @@
 @startuml
-class com.pluralsight.delishop.backend.PremiumTopping {
+abstract class com.pluralsight.delishop.backend.PremiumTopping {
+~ double price
 }
+
 abstract class com.pluralsight.delishop.backend.Addon {
 }
 class com.pluralsight.delishop.backend.Sandwich {
-- ArrayList<Topping> toppings
-- boolean isToasted
-- BreadType breadType
-- SandwichSize sandwichSize
+# ArrayList<Topping> toppings
+# boolean isToasted
+# BreadType breadType
+# SandwichSize sandwichSize
+# double price
++ SandwichSize getSandwichSize()
++ void addTopping(Topping)
++ double getPrice()
 }
+
 
 abstract class com.pluralsight.delishop.backend.Product {
-- double totalPrice
-- String name
-- int id
-+ double updatePrice()
++ {abstract}double getPrice()
 }
-
 
 class com.pluralsight.delishop.backend.Cheese {
-- Cheese typeOfCheese
+- TypeOfCheese typeOfCheese
++ double getPrice()
 }
+
 
 class com.pluralsight.delishop.backend.Chips {
+# String name
++ String getName()
++ double getPrice()
 }
+
+
 class com.pluralsight.delishop.backend.Drink {
 - DrinkSize drinkSize
+# double price
++ double getPrice()
 }
+
 
 class com.pluralsight.delishop.backend.RegularTopping {
-}
-class com.pluralsight.delishop.backend.Meat {
-- Meat typeOfMeat
+# RegularToppings regularTopping
++ RegularToppings getRegularTopping()
++ boolean hasExtra()
++ double getPrice()
 }
 
-abstract class com.pluralsight.delishop.backend.Topping {
-- boolean hasExtra
-- double price
+
+class com.pluralsight.delishop.backend.Meat {
+# Meat typeOfMeat
++ Meat getTypeOfMeat()
++ double getPrice()
 }
+
+
+abstract class com.pluralsight.delishop.backend.Topping {
+# boolean hasExtra
+# SandwichSize size
++ {abstract}double getPrice()
+}
+
+
+class com.pluralsight.delishop.backend.Order {
+- ArrayList<Product> items
+- double totalPrice
++ void addItem(Product)
++ Order printOrder()
++ double getTotalPrice()
+}
+
 
 
 

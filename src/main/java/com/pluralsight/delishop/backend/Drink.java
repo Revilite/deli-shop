@@ -2,7 +2,7 @@ package com.pluralsight.delishop.backend;
 
 import com.pluralsight.delishop.backend.inventory.DrinkSize;
 
-public class Drink extends Addon {
+public class Drink implements Addon {
     private DrinkSize drinkSize;
     protected double price;
 
