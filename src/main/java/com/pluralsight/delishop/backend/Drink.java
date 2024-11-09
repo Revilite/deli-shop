@@ -1,14 +1,14 @@
 package com.pluralsight.delishop.backend;
 
-import com.pluralsight.delishop.backend.inventory.DrinkSize;
-
-public class Drink implements Addon {
+public class Drink implements Product {
     private DrinkSize drinkSize;
+    private String name;
     protected double price;
 
 
-    public Drink(DrinkSize drinkSize) {
+    public Drink(DrinkSize drinkSize,  String name) {
         this.drinkSize = drinkSize;
+        this.name = name;
     }
 
     @Override
@@ -25,4 +25,12 @@ public class Drink implements Addon {
         }
         return price;
     }
+
+    public enum DrinkSize {
+        SMALL,
+        MEDIUM,
+        LARGE
+
+    }
+
 }

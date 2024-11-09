@@ -15,14 +15,18 @@ public class Order {
         items.add(item);
     }
 
-    public Order printOrder() {
-        return this;
-    }
-
     public double getTotalPrice() {
         for (Product item : items) {
             totalPrice += item.getPrice();
         }
         return totalPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "items=" + items +
+                ", totalPrice=" + getTotalPrice() +
+                '}';
     }
 }
