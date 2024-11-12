@@ -3,16 +3,17 @@ package com.pluralsight.delishop.backend;
 import java.util.ArrayList;
 
 public class Sandwich implements Product {
-    protected ArrayList<Topping> toppings = new ArrayList<>();
+    protected ArrayList<Topping> toppings;
     protected boolean isToasted;
     protected BreadType breadType;
     protected SandwichSize sandwichSize;
     protected double price;
 
-    public Sandwich(SandwichSize sandwichSize, boolean isToasted, BreadType breadType) {
+    public Sandwich(SandwichSize sandwichSize, boolean isToasted, BreadType breadType, ArrayList<Topping> toppings) {
         this.isToasted = isToasted;
         this.breadType = breadType;
         this.sandwichSize = sandwichSize;
+        this.toppings = toppings;
     }
 
     public SandwichSize getSandwichSize() {

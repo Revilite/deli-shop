@@ -2,6 +2,7 @@
 import com.pluralsight.delishop.backend.*;
 
 import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -70,7 +71,7 @@ public class Main {
         System.out.println("Would you like it toasted?");
         String toasted = scan.nextLine();
 
-        Sandwich sandwich = new Sandwich(sandwichSize, toasted.equalsIgnoreCase("Yes") ? true : false, breadType);
+        Sandwich sandwich = new Sandwich(sandwichSize, toasted.equalsIgnoreCase("Yes") ? true : false, breadType, new ArrayList<>());
         addTopping(sandwich);
 
         return sandwich;

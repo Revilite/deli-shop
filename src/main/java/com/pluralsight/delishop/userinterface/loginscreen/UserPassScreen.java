@@ -43,6 +43,7 @@ public class UserPassScreen extends javax.swing.JFrame {
         heading = new javax.swing.JLabel();
         buttonContainer = new javax.swing.JLayeredPane();
         button1 = new javax.swing.JButton();
+
         button2 = new javax.swing.JButton();
         button3 = new javax.swing.JButton();
         button4 = new javax.swing.JButton();

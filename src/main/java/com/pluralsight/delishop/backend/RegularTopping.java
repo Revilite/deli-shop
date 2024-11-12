@@ -18,8 +18,18 @@ public class RegularTopping extends Topping {
         return hasExtra;
     }
 
+
     @Override
     public double getPrice() {
         return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "RegularTopping{" +
+                "regularTopping=" + regularTopping +
+                ", hasExtra=" + hasExtra +
+                ", size=" + size +
+                '}';
     }
 }
