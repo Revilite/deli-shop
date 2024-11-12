@@ -1,11 +1,7 @@
 
-import com.pluralsight.delishop.backend.Cheese;
-import com.pluralsight.delishop.backend.Order;
-import com.pluralsight.delishop.backend.Sandwich;
-import com.pluralsight.delishop.backend.inventory.BreadType;
-import com.pluralsight.delishop.backend.inventory.TypeOfCheese;
-import com.pluralsight.delishop.backend.inventory.SandwichSize;
+import com.pluralsight.delishop.backend.*;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -48,13 +44,13 @@ public class Main {
                     order.addItem(addSandwich());
                     break;
                 case (2):
-                    addDrink();
+                    order.addItem(addDrink());
                     break;
                 case (3):
-                    addChips();
+                    order.addItem(addChips());
                     break;
                 case (4):
-                    checkout();
+                    System.out.println(order);
                     break;
                 default:
                     System.out.println(order.getTotalPrice());
@@ -68,9 +64,9 @@ public class Main {
     public static Sandwich addSandwich() {
         Scanner scan = new Scanner(System.in);
         System.out.println("What kind of bread do you want?");
-        BreadType breadType = BreadType.valueOf(scan.nextLine());
+        Sandwich.BreadType breadType = Sandwich.BreadType.valueOf(scan.nextLine());
         System.out.println("What is the size of the sandwich");
-        SandwichSize sandwichSize = SandwichSize.valueOf(scan.nextLine());
+        Sandwich.SandwichSize sandwichSize = Sandwich.SandwichSize.valueOf(scan.nextLine());
         System.out.println("Would you like it toasted?");
         String toasted = scan.nextLine();
 
@@ -80,24 +76,35 @@ public class Main {
         return sandwich;
     }
 
-    public static void addDrink() {
+    public static Drink addDrink() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("What size Drink do you want");
+        Drink.DrinkSize size = Drink.DrinkSize.valueOf(scan.nextLine());
+        System.out.println("What is the name of the drink?");
+        String name = scan.nextLine();
 
+
+        Drink drink = new Drink(size, name);
+
+        return drink;
     }
 
-    public static void addChips() {
+    public static Chips addChips() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("What kind of chips do you want?");
+        String name = scan.nextLine();
 
+        Chips chips = new Chips(name);
+        return chips;
     }
 
-    public static void checkout() {
-
-    }
 
     public static void addTopping(Sandwich sandwich) {
         Scanner scan = new Scanner(System.in);
 
         while (true) {
             System.out.println("What topping would you like?");
-            TypeOfCheese typeOfCheese = TypeOfCheese.valueOf(scan.nextLine());
+            Cheese.TypeOfCheese typeOfCheese = Cheese.TypeOfCheese.valueOf(scan.nextLine());
             System.out.println("is there extra?");
             String hasExtra = scan.nextLine();
 

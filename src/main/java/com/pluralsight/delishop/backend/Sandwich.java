@@ -1,8 +1,5 @@
 package com.pluralsight.delishop.backend;
 
-import com.pluralsight.delishop.backend.inventory.BreadType;
-import com.pluralsight.delishop.backend.inventory.SandwichSize;
-
 import java.util.ArrayList;
 
 public class Sandwich implements Product {
@@ -43,4 +40,20 @@ public class Sandwich implements Product {
 
         return price;
     }
+
+    public enum SandwichSize {
+        FOURINCH,
+        EIGHTINCH,
+        TWELVEINCH;
+    }
+
+    public enum BreadType {
+        WHITE,
+        WHEAT,
+        RYE,
+        WRAP
+    }
+
+
+
 }
