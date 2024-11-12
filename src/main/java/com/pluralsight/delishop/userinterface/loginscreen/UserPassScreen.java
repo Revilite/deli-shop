@@ -64,6 +64,15 @@ public class UserPassScreen extends javax.swing.JFrame {
         Background = new javax.swing.JLayeredPane();
         heading = new javax.swing.JLabel();
         buttonContainer = new javax.swing.JLayeredPane();
+        button1 = new javax.swing.JButton();
+        button2 = new javax.swing.JButton();
+        button3 = new javax.swing.JButton();
+        button4 = new javax.swing.JButton();
+        button5 = new javax.swing.JButton();
+        button6 = new javax.swing.JButton();
+        button7 = new javax.swing.JButton();
+        button8 = new javax.swing.JButton();
+        button9 = new javax.swing.JButton();
         emptyLabel = new javax.swing.JLabel();
         button0 = new javax.swing.JButton();
 
@@ -71,9 +80,12 @@ public class UserPassScreen extends javax.swing.JFrame {
         setTitle("Log in please :D");
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(42, 86, 28));
+        setMaximumSize(new java.awt.Dimension(1920, 1080));
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1920, 1080));
 
         Background.setBackground(new java.awt.Color(157, 220, 101));
-        Background.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(42, 86, 28), 30, true));
         Background.setOpaque(true);
         Background.setPreferredSize(new java.awt.Dimension(1920, 1080));
 
@@ -82,22 +94,149 @@ public class UserPassScreen extends javax.swing.JFrame {
 
         buttonContainer.setLayout(new java.awt.GridLayout(4, 3));
 
+        button1.setBackground(new java.awt.Color(153, 153, 153));
+        button1.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        button1.setText("1");
+        button1.setAlignmentY(0.0F);
+        button1.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        button1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button1.setFocusable(false);
+        button1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        button1.setSelected(true);
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
+        buttonContainer.add(button1);
 
-        for(int i = 1; i <= 9; i++){
-            JButton button = new JButton();
-            button.setBackground(new java.awt.Color(153, 153, 153));
-            button.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
-            button.setText(String.valueOf(i));
-            button.setAlignmentY(0.0F);
-            button.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-            button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-            button.setFocusable(false);
-            button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-            button.setSelected(true);
-            int finalI = i;
-            button.addActionListener(evt -> handleButtonPress(finalI));
-            buttonContainer.add(button);
-        }
+        button2.setBackground(new java.awt.Color(153, 153, 153));
+        button2.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        button2.setText("2");
+        button2.setAlignmentY(0.0F);
+        button2.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        button2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button2.setFocusable(false);
+        button2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        button2.setSelected(true);
+        button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2ActionPerformed(evt);
+            }
+        });
+        buttonContainer.add(button2);
+
+        button3.setBackground(new java.awt.Color(153, 153, 153));
+        button3.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        button3.setText("3");
+        button3.setAlignmentY(0.0F);
+        button3.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        button3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button3.setFocusable(false);
+        button3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        button3.setSelected(true);
+        button3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button3ActionPerformed(evt);
+            }
+        });
+        buttonContainer.add(button3);
+
+        button4.setBackground(new java.awt.Color(153, 153, 153));
+        button4.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        button4.setText("4");
+        button4.setAlignmentY(0.0F);
+        button4.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        button4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button4.setFocusable(false);
+        button4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        button4.setSelected(true);
+        button4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button4ActionPerformed(evt);
+            }
+        });
+        buttonContainer.add(button4);
+
+        button5.setBackground(new java.awt.Color(153, 153, 153));
+        button5.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        button5.setText("5");
+        button5.setAlignmentY(0.0F);
+        button5.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        button5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button5.setFocusable(false);
+        button5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        button5.setSelected(true);
+        button5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button5ActionPerformed(evt);
+            }
+        });
+        buttonContainer.add(button5);
+
+        button6.setBackground(new java.awt.Color(153, 153, 153));
+        button6.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        button6.setText("6");
+        button6.setAlignmentY(0.0F);
+        button6.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        button6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button6.setFocusable(false);
+        button6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        button6.setSelected(true);
+        button6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button6ActionPerformed(evt);
+            }
+        });
+        buttonContainer.add(button6);
+
+        button7.setBackground(new java.awt.Color(153, 153, 153));
+        button7.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        button7.setText("7");
+        button7.setAlignmentY(0.0F);
+        button7.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        button7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button7.setFocusable(false);
+        button7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        button7.setSelected(true);
+        button7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button7ActionPerformed(evt);
+            }
+        });
+        buttonContainer.add(button7);
+
+        button8.setBackground(new java.awt.Color(153, 153, 153));
+        button8.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        button8.setText("8");
+        button8.setAlignmentY(0.0F);
+        button8.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        button8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button8.setFocusable(false);
+        button8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        button8.setSelected(true);
+        button8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button8ActionPerformed(evt);
+            }
+        });
+        buttonContainer.add(button8);
+
+        button9.setBackground(new java.awt.Color(153, 153, 153));
+        button9.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
+        button9.setText("9");
+        button9.setAlignmentY(0.0F);
+        button9.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
+        button9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        button9.setFocusable(false);
+        button9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        button9.setSelected(true);
+        button9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button9ActionPerformed(evt);
+            }
+        });
+        buttonContainer.add(button9);
 
         emptyLabel.setFocusable(false);
         buttonContainer.add(emptyLabel);
@@ -106,12 +245,16 @@ public class UserPassScreen extends javax.swing.JFrame {
         button0.setFont(new java.awt.Font("Consolas", 1, 48)); // NOI18N
         button0.setText("0");
         button0.setAlignmentY(0.0F);
-        button0.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        button0.setBorder(javax.swing.BorderFactory.createBevelBorder(null));
         button0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         button0.setFocusable(false);
         button0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         button0.setSelected(true);
-        button0.addActionListener(evt -> handleButtonPress(0));
+        button0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button0ActionPerformed(evt);
+            }
+        });
         buttonContainer.add(button0);
 
         Background.setLayer(heading, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -126,7 +269,7 @@ public class UserPassScreen extends javax.swing.JFrame {
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(buttonContainer)
                     .addComponent(heading, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(404, 404, 404))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,7 +278,7 @@ public class UserPassScreen extends javax.swing.JFrame {
                 .addComponent(heading)
                 .addGap(28, 28, 28)
                 .addComponent(buttonContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(268, Short.MAX_VALUE))
+                .addContainerGap(305, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,13 +286,13 @@ public class UserPassScreen extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 1668, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 1043, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -174,6 +317,15 @@ public class UserPassScreen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLayeredPane Background;
     private javax.swing.JButton button0;
+    private javax.swing.JButton button1;
+    private javax.swing.JButton button2;
+    private javax.swing.JButton button3;
+    private javax.swing.JButton button4;
+    private javax.swing.JButton button5;
+    private javax.swing.JButton button6;
+    private javax.swing.JButton button7;
+    private javax.swing.JButton button8;
+    private javax.swing.JButton button9;
     private javax.swing.JLayeredPane buttonContainer;
     private javax.swing.JLabel emptyLabel;
     private javax.swing.JLabel heading;

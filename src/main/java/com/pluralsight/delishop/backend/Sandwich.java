@@ -26,7 +26,7 @@ public class Sandwich implements Product {
 
     @Override
     public double getPrice() {
-        double price = 0;
+        price = 0;
         for (Topping topping : toppings) {
             price += topping.getPrice();
         }
