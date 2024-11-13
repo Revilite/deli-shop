@@ -2,14 +2,14 @@ package com.pluralsight.delishop.backend;
 
 
 public class Meat extends PremiumTopping {
-    protected Meat typeOfMeat;
+    protected Meat.TypeOfMeat typeOfMeat;
 
-    public Meat(Meat typeOfMeat, Sandwich.SandwichSize size, boolean hasExtra) {
+    public Meat(Meat.TypeOfMeat typeOfMeat, Sandwich.SandwichSize size, boolean hasExtra) {
         super(hasExtra, size);
         this.typeOfMeat = typeOfMeat;
     }
 
-    public Meat getTypeOfMeat() {
+    public Meat.TypeOfMeat getTypeOfMeat() {
         return typeOfMeat;
     }
 
