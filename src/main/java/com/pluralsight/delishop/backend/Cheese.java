@@ -28,6 +28,16 @@ public class Cheese extends PremiumTopping {
         return price;
     }
 
+    @Override
+    public String toString() {
+        return "Cheese{" +
+                "typeOfCheese=" + typeOfCheese +
+                ", price=" + getPrice() +
+                ", hasExtra=" + hasExtra +
+                ", size=" + size +
+                '}';
+    }
+
     public enum TypeOfCheese{
         AMERICAN,
         PROVOLONE,

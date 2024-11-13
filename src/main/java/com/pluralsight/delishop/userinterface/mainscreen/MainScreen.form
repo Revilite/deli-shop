@@ -569,12 +569,18 @@
                             <Property name="text" type="java.lang.String" value="Ham"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hamButtonActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JToggleButton" name="salamiButton">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Salami"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salamiButtonActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JToggleButton" name="steakButton">
                           <Properties>
@@ -582,7 +588,6 @@
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="steakButtonStateChanged"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="steakButtonActionPerformed"/>
                           </Events>
                         </Component>
@@ -591,12 +596,18 @@
                             <Property name="text" type="java.lang.String" value="Roast Beef"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="roastBeefButtonActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JToggleButton" name="chickenButton">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Chicken"/>
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chickenButtonActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JToggleButton" name="baconButton">
                           <Properties>
@@ -741,7 +752,6 @@
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="lettuceButtonStateChanged"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lettuceButtonActionPerformed"/>
                           </Events>
                         </Component>
@@ -751,7 +761,6 @@
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="pepperButtonStateChanged"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pepperButtonActionPerformed"/>
                           </Events>
                         </Component>
@@ -761,7 +770,6 @@
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="onionButtonStateChanged"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onionButtonActionPerformed"/>
                           </Events>
                         </Component>
@@ -771,7 +779,6 @@
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="tomatoButtonStateChanged"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tomatoButtonActionPerformed"/>
                           </Events>
                         </Component>
@@ -781,7 +788,6 @@
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jalepenoButtonStateChanged"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jalepenoButtonActionPerformed"/>
                           </Events>
                         </Component>
@@ -791,7 +797,6 @@
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="cucumberButtonStateChanged"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cucumberButtonActionPerformed"/>
                           </Events>
                         </Component>
@@ -801,7 +806,6 @@
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="pickleButtonStateChanged"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pickleButtonActionPerformed"/>
                           </Events>
                         </Component>
@@ -811,7 +815,6 @@
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="guacamoleButtonStateChanged"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="guacamoleButtonActionPerformed"/>
                           </Events>
                         </Component>
@@ -821,7 +824,6 @@
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="mushroomButtonStateChanged"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mushroomButtonActionPerformed"/>
                           </Events>
                         </Component>
@@ -860,13 +862,6 @@
                                   <Component id="vinaigretteButton" min="-2" pref="106" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
-                              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="mushroomButton5" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
@@ -886,13 +881,6 @@
                                       <Component id="vinaigretteButton" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="17" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="mushroomButton5" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -916,7 +904,6 @@
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="mayoButtonStateChanged"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mayoButtonActionPerformed"/>
                           </Events>
                         </Component>
@@ -926,7 +913,6 @@
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="mustardButtonStateChanged"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mustardButtonActionPerformed"/>
                           </Events>
                         </Component>
@@ -936,7 +922,6 @@
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ketchupButtonStateChanged"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ketchupButtonActionPerformed"/>
                           </Events>
                         </Component>
@@ -946,15 +931,8 @@
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="islandButtonStateChanged"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="islandButtonActionPerformed"/>
                           </Events>
-                        </Component>
-                        <Component class="javax.swing.JToggleButton" name="mushroomButton5">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Mushrooms"/>
-                            <Property name="focusable" type="boolean" value="false"/>
-                          </Properties>
                         </Component>
                         <Component class="javax.swing.JToggleButton" name="ranchButton">
                           <Properties>
@@ -962,7 +940,6 @@
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="ranchButtonStateChanged"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ranchButtonActionPerformed"/>
                           </Events>
                         </Component>
@@ -972,7 +949,6 @@
                             <Property name="focusable" type="boolean" value="false"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="vinaigretteButtonStateChanged"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="vinaigretteButtonActionPerformed"/>
                           </Events>
                         </Component>

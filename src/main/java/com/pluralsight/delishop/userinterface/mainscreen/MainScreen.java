@@ -9,8 +9,6 @@ import com.pluralsight.delishop.userinterface.loginscreen.UserPassScreen;
 import com.pluralsight.delishop.backend.*;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /**
@@ -111,7 +109,6 @@ public class MainScreen extends javax.swing.JFrame {
         mustardButton = new javax.swing.JToggleButton();
         ketchupButton = new javax.swing.JToggleButton();
         islandButton = new javax.swing.JToggleButton();
-        mushroomButton5 = new javax.swing.JToggleButton();
         ranchButton = new javax.swing.JToggleButton();
         vinaigretteButton = new javax.swing.JToggleButton();
         toastedPanel = new javax.swing.JPanel();
@@ -294,17 +291,22 @@ public class MainScreen extends javax.swing.JFrame {
 
         hamButton.setText("Ham");
         hamButton.setFocusable(false);
+        hamButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hamButtonActionPerformed(evt);
+            }
+        });
 
         salamiButton.setText("Salami");
         salamiButton.setFocusable(false);
+        salamiButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salamiButtonActionPerformed(evt);
+            }
+        });
 
         steakButton.setText("Steak");
         steakButton.setFocusable(false);
-        steakButton.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                steakButtonStateChanged(evt);
-            }
-        });
         steakButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 steakButtonActionPerformed(evt);
@@ -313,9 +315,19 @@ public class MainScreen extends javax.swing.JFrame {
 
         roastBeefButton.setText("Roast Beef");
         roastBeefButton.setFocusable(false);
+        roastBeefButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                roastBeefButtonActionPerformed(evt);
+            }
+        });
 
         chickenButton.setText("Chicken");
         chickenButton.setFocusable(false);
+        chickenButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chickenButtonActionPerformed(evt);
+            }
+        });
 
         baconButton.setText("Bacon");
         baconButton.setFocusable(false);
@@ -427,11 +439,6 @@ public class MainScreen extends javax.swing.JFrame {
 
         lettuceButton.setText("Lettuce");
         lettuceButton.setFocusable(false);
-        lettuceButton.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                lettuceButtonStateChanged(evt);
-            }
-        });
         lettuceButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lettuceButtonActionPerformed(evt);
@@ -440,11 +447,6 @@ public class MainScreen extends javax.swing.JFrame {
 
         pepperButton.setText("Peppers");
         pepperButton.setFocusable(false);
-        pepperButton.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                pepperButtonStateChanged(evt);
-            }
-        });
         pepperButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pepperButtonActionPerformed(evt);
@@ -453,11 +455,6 @@ public class MainScreen extends javax.swing.JFrame {
 
         onionButton.setText("Onions");
         onionButton.setFocusable(false);
-        onionButton.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                onionButtonStateChanged(evt);
-            }
-        });
         onionButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 onionButtonActionPerformed(evt);
@@ -466,11 +463,6 @@ public class MainScreen extends javax.swing.JFrame {
 
         tomatoButton.setText("Tomatoes");
         tomatoButton.setFocusable(false);
-        tomatoButton.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                tomatoButtonStateChanged(evt);
-            }
-        });
         tomatoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tomatoButtonActionPerformed(evt);
@@ -479,11 +471,6 @@ public class MainScreen extends javax.swing.JFrame {
 
         jalepenoButton.setText("Jalepenos");
         jalepenoButton.setFocusable(false);
-        jalepenoButton.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jalepenoButtonStateChanged(evt);
-            }
-        });
         jalepenoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jalepenoButtonActionPerformed(evt);
@@ -492,11 +479,6 @@ public class MainScreen extends javax.swing.JFrame {
 
         cucumberButton.setText("Cucumbers");
         cucumberButton.setFocusable(false);
-        cucumberButton.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                cucumberButtonStateChanged(evt);
-            }
-        });
         cucumberButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cucumberButtonActionPerformed(evt);
@@ -505,11 +487,6 @@ public class MainScreen extends javax.swing.JFrame {
 
         pickleButton.setText("Pickles");
         pickleButton.setFocusable(false);
-        pickleButton.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                pickleButtonStateChanged(evt);
-            }
-        });
         pickleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pickleButtonActionPerformed(evt);
@@ -518,11 +495,6 @@ public class MainScreen extends javax.swing.JFrame {
 
         guacamoleButton.setText("Guacamole");
         guacamoleButton.setFocusable(false);
-        guacamoleButton.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                guacamoleButtonStateChanged(evt);
-            }
-        });
         guacamoleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 guacamoleButtonActionPerformed(evt);
@@ -531,11 +503,6 @@ public class MainScreen extends javax.swing.JFrame {
 
         mushroomButton.setText("Mushrooms");
         mushroomButton.setFocusable(false);
-        mushroomButton.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                mushroomButtonStateChanged(evt);
-            }
-        });
         mushroomButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mushroomButtonActionPerformed(evt);
@@ -610,11 +577,6 @@ public class MainScreen extends javax.swing.JFrame {
 
         mayoButton.setText("Mayo");
         mayoButton.setFocusable(false);
-        mayoButton.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                mayoButtonStateChanged(evt);
-            }
-        });
         mayoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mayoButtonActionPerformed(evt);
@@ -623,11 +585,6 @@ public class MainScreen extends javax.swing.JFrame {
 
         mustardButton.setText("Mustard");
         mustardButton.setFocusable(false);
-        mustardButton.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                mustardButtonStateChanged(evt);
-            }
-        });
         mustardButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mustardButtonActionPerformed(evt);
@@ -636,11 +593,6 @@ public class MainScreen extends javax.swing.JFrame {
 
         ketchupButton.setText("Ketchup");
         ketchupButton.setFocusable(false);
-        ketchupButton.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                ketchupButtonStateChanged(evt);
-            }
-        });
         ketchupButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ketchupButtonActionPerformed(evt);
@@ -649,27 +601,14 @@ public class MainScreen extends javax.swing.JFrame {
 
         islandButton.setText("Thousand Island");
         islandButton.setFocusable(false);
-        islandButton.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                islandButtonStateChanged(evt);
-            }
-        });
         islandButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 islandButtonActionPerformed(evt);
             }
         });
 
-        mushroomButton5.setText("Mushrooms");
-        mushroomButton5.setFocusable(false);
-
         ranchButton.setText("Ranch");
         ranchButton.setFocusable(false);
-        ranchButton.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                ranchButtonStateChanged(evt);
-            }
-        });
         ranchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ranchButtonActionPerformed(evt);
@@ -678,11 +617,6 @@ public class MainScreen extends javax.swing.JFrame {
 
         vinaigretteButton.setText("Vinaigrette");
         vinaigretteButton.setFocusable(false);
-        vinaigretteButton.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                vinaigretteButtonStateChanged(evt);
-            }
-        });
         vinaigretteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vinaigretteButtonActionPerformed(evt);
@@ -713,11 +647,6 @@ public class MainScreen extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(vinaigretteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(saucePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(saucePanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(mushroomButton5)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         saucePanelLayout.setVerticalGroup(
             saucePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -734,11 +663,6 @@ public class MainScreen extends javax.swing.JFrame {
                     .addComponent(ranchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(vinaigretteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(17, Short.MAX_VALUE))
-            .addGroup(saucePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(saucePanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(mushroomButton5)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         toastedPanel.setBackground(new java.awt.Color(200, 200, 200));
@@ -995,43 +919,66 @@ public class MainScreen extends javax.swing.JFrame {
     private void yesToastedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesToastedButtonActionPerformed
         isToasted = true;
     }//GEN-LAST:event_yesToastedButtonActionPerformed
+
     Meat meat;
+
     private void addMeat(JToggleButton button, Meat.TypeOfMeat typeOfMeat) {
-        if(button.isSelected()){
+        if (button.isSelected()) {
             int extra = JOptionPane.showConfirmDialog(sandwichMenu, "Does the customer want extra?", "Extra", JOptionPane.YES_NO_OPTION);
-            if(extra == 0){
+            if (extra == 0) {
                 meat = new Meat(typeOfMeat, sandwichSize, true);
                 toppings.add(meat);
-            }
-            else {
-                meat = new Meat(typeOfMeat, sandwichSize, true);
+            } else {
+                meat = new Meat(typeOfMeat, sandwichSize, false);
                 toppings.add(meat);
             }
-        }
-        else{
-            toppings.remove(meat);
+        } else {
+            toppings.removeIf(t -> ((Meat) t).getTypeOfMeat() == typeOfMeat);
         }
         toppings.stream().forEach(t -> System.out.println(t.toString()));
     }
 
     Cheese cheese;
-    private void addCheese(JToggleButton button, Cheese.TypeOfCheese typeOfCheese){
-        if(button.isSelected()){
+
+    private void addCheese(JToggleButton button, Cheese.TypeOfCheese typeOfCheese) {
+        if (button.isSelected()) {
             int extra = JOptionPane.showConfirmDialog(sandwichMenu, "Does the customer want extra?", "Extra", JOptionPane.YES_NO_OPTION);
-            if(extra == 0){
+            if (extra == 0) {
                 cheese = new Cheese(typeOfCheese, sandwichSize, true);
                 toppings.add(cheese);
-            }
-            else {
-                cheese = new Cheese(typeOfCheese, sandwichSize, true);
+            } else {
+                cheese = new Cheese(typeOfCheese, sandwichSize, false);
                 toppings.add(cheese);
             }
-        }
-        else{
-            toppings.remove(cheese);
+        } else {
+            toppings.removeIf(t -> ((Cheese) t).getTypeOfCheese() == typeOfCheese);
         }
         toppings.stream().forEach(t -> System.out.println(t.toString()));
     }
+
+    RegularTopping regTopping;
+
+    private void addRegTopping(JToggleButton button, RegularToppings topping) {
+        if (button.isSelected()) {
+            int extra = JOptionPane.showConfirmDialog(sandwichMenu, "Does the customer want extra?", "Extra", JOptionPane.YES_NO_OPTION);
+            if (extra == 0) {
+                regTopping = new RegularTopping(true, sandwichSize, topping);
+                toppings.add(regTopping);
+            } else {
+                regTopping = new RegularTopping(false, sandwichSize, topping);
+                toppings.add(regTopping);
+            }
+        } else {
+            toppings.removeIf(t-> ((RegularTopping) t).getRegularTopping() == topping);
+
+        }
+        toppings.stream().forEach(t -> System.out.println(t.toString()));
+    }
+
+    private void steakButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_steakButtonActionPerformed
+        addMeat(steakButton, Meat.TypeOfMeat.STEAK);
+    }//GEN-LAST:event_steakButtonActionPerformed
+
     private void baconButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_baconButtonActionPerformed
         addMeat(baconButton, Meat.TypeOfMeat.BACON);
     }//GEN-LAST:event_baconButtonActionPerformed
@@ -1041,152 +988,93 @@ public class MainScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_americanButtonActionPerformed
 
     private void provoloneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_provoloneButtonActionPerformed
-        // TODO add your handling code here:
+        addCheese(provoloneButton, Cheese.TypeOfCheese.PROVOLONE);
     }//GEN-LAST:event_provoloneButtonActionPerformed
 
     private void cheddarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cheddarButtonActionPerformed
-        // TODO add your handling code here:
+        addCheese(cheddarButton, Cheese.TypeOfCheese.CHEDDAR);
     }//GEN-LAST:event_cheddarButtonActionPerformed
 
     private void swissButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_swissButtonActionPerformed
-        // TODO add your handling code here:
+        addCheese(swissButton, Cheese.TypeOfCheese.SWISS);
     }//GEN-LAST:event_swissButtonActionPerformed
 
-    private void steakButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_steakButtonStateChanged
-       if(steakButton.isSelected()){
-           
-       }
-    }//GEN-LAST:event_steakButtonStateChanged
-
-    private void steakButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_steakButtonActionPerformed
-       if(steakButton.isSelected()){
-           System.out.println("True");
-       }
-       else{
-           System.out.println("False");
-       }
-    }//GEN-LAST:event_steakButtonActionPerformed
 
     private void tomatoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tomatoButtonActionPerformed
-        // TODO add your handling code here:
+        addRegTopping(tomatoButton, RegularToppings.TOMATOES);
     }//GEN-LAST:event_tomatoButtonActionPerformed
 
-    private void tomatoButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_tomatoButtonStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tomatoButtonStateChanged
-
     private void onionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onionButtonActionPerformed
-        // TODO add your handling code here:
+        addRegTopping(onionButton, RegularToppings.ONIONS);
     }//GEN-LAST:event_onionButtonActionPerformed
 
-    private void onionButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_onionButtonStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_onionButtonStateChanged
-
     private void pepperButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pepperButtonActionPerformed
-        // TODO add your handling code here:
+        addRegTopping(pepperButton, RegularToppings.PEPPERS);
     }//GEN-LAST:event_pepperButtonActionPerformed
 
-    private void pepperButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_pepperButtonStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pepperButtonStateChanged
-
     private void lettuceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lettuceButtonActionPerformed
-        // TODO add your handling code here:
+        addRegTopping(lettuceButton, RegularToppings.LETTUCE);
     }//GEN-LAST:event_lettuceButtonActionPerformed
 
-    private void lettuceButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_lettuceButtonStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lettuceButtonStateChanged
-
-    private void jalepenoButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jalepenoButtonStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jalepenoButtonStateChanged
-
     private void jalepenoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jalepenoButtonActionPerformed
-        // TODO add your handling code here:
+        addRegTopping(jalepenoButton, RegularToppings.JALEPENOS);
     }//GEN-LAST:event_jalepenoButtonActionPerformed
 
-    private void cucumberButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_cucumberButtonStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cucumberButtonStateChanged
-
     private void cucumberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cucumberButtonActionPerformed
-        // TODO add your handling code here:
+        addRegTopping(cucumberButton, RegularToppings.CUCUMBERS);
     }//GEN-LAST:event_cucumberButtonActionPerformed
 
-    private void pickleButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_pickleButtonStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pickleButtonStateChanged
-
     private void pickleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pickleButtonActionPerformed
-        // TODO add your handling code here:
+        addRegTopping(pickleButton, RegularToppings.PICKLES);
     }//GEN-LAST:event_pickleButtonActionPerformed
 
-    private void guacamoleButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_guacamoleButtonStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_guacamoleButtonStateChanged
-
     private void guacamoleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guacamoleButtonActionPerformed
-        // TODO add your handling code here:
+        addRegTopping(guacamoleButton, RegularToppings.GUACAMOLE);
     }//GEN-LAST:event_guacamoleButtonActionPerformed
 
-    private void mushroomButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_mushroomButtonStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mushroomButtonStateChanged
-
     private void mushroomButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mushroomButtonActionPerformed
-        // TODO add your handling code here:
+        addRegTopping(mushroomButton, RegularToppings.MUSHROOMS);
     }//GEN-LAST:event_mushroomButtonActionPerformed
 
-    private void mayoButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_mayoButtonStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mayoButtonStateChanged
-
     private void mayoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mayoButtonActionPerformed
-        // TODO add your handling code here:
+        addRegTopping(mayoButton, RegularToppings.MAYO);
     }//GEN-LAST:event_mayoButtonActionPerformed
 
-    private void mustardButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_mustardButtonStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mustardButtonStateChanged
-
     private void mustardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mustardButtonActionPerformed
-        // TODO add your handling code here:
+        addRegTopping(mustardButton, RegularToppings.MUSTARD);
     }//GEN-LAST:event_mustardButtonActionPerformed
 
-    private void ketchupButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ketchupButtonStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ketchupButtonStateChanged
-
     private void ketchupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ketchupButtonActionPerformed
-        // TODO add your handling code here:
+        addRegTopping(ketchupButton, RegularToppings.KETCHUP);
     }//GEN-LAST:event_ketchupButtonActionPerformed
 
-    private void islandButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_islandButtonStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_islandButtonStateChanged
-
     private void islandButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_islandButtonActionPerformed
-        // TODO add your handling code here:
+        addRegTopping(islandButton, RegularToppings.THOUSAND_ISLAND);
     }//GEN-LAST:event_islandButtonActionPerformed
 
-    private void ranchButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ranchButtonStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ranchButtonStateChanged
-
     private void ranchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ranchButtonActionPerformed
-        // TODO add your handling code here:
+        addRegTopping(ranchButton, RegularToppings.RANCH);
     }//GEN-LAST:event_ranchButtonActionPerformed
 
-    private void vinaigretteButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_vinaigretteButtonStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vinaigretteButtonStateChanged
-
     private void vinaigretteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vinaigretteButtonActionPerformed
-        // TODO add your handling code here:
+        addRegTopping(vinaigretteButton, RegularToppings.VINAIGRETTE);
     }//GEN-LAST:event_vinaigretteButtonActionPerformed
 
+    private void hamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hamButtonActionPerformed
+        addMeat(hamButton, Meat.TypeOfMeat.HAM);
+    }//GEN-LAST:event_hamButtonActionPerformed
+
+    private void salamiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salamiButtonActionPerformed
+        addMeat(salamiButton, Meat.TypeOfMeat.SALAMI);
+    }//GEN-LAST:event_salamiButtonActionPerformed
+
+    private void roastBeefButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roastBeefButtonActionPerformed
+        addMeat(roastBeefButton, Meat.TypeOfMeat.ROAST_BEEF);
+    }//GEN-LAST:event_roastBeefButtonActionPerformed
+
+    private void chickenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chickenButtonActionPerformed
+        addMeat(chickenButton, Meat.TypeOfMeat.CHICKEN);
+    }//GEN-LAST:event_chickenButtonActionPerformed
 
 
     /**
@@ -1217,7 +1105,6 @@ public class MainScreen extends javax.swing.JFrame {
     private javax.swing.JToggleButton lettuceButton;
     private javax.swing.JToggleButton mayoButton;
     private javax.swing.JToggleButton mushroomButton;
-    private javax.swing.JToggleButton mushroomButton5;
     private javax.swing.JToggleButton mustardButton;
     private javax.swing.JButton noToastedButton;
     private javax.swing.JToggleButton onionButton;

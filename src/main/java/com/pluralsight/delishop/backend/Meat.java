@@ -29,6 +29,16 @@ public class Meat extends PremiumTopping {
         return price;
     }
 
+    @Override
+    public String toString() {
+        return "Meat{" +
+                "typeOfMeat=" + typeOfMeat +
+                ", price=" + getPrice() +
+                ", hasExtra=" + hasExtra +
+                ", size=" + size +
+                '}';
+    }
+
     public enum TypeOfMeat {
         STEAK,
         HAM,
