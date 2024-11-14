@@ -6,7 +6,7 @@ public class Drink implements Product {
     protected double price;
 
 
-    public Drink(DrinkSize drinkSize,  String name) {
+    public Drink(DrinkSize drinkSize, String name) {
         this.drinkSize = drinkSize;
         this.name = name;
     }
@@ -14,13 +14,11 @@ public class Drink implements Product {
     @Override
     public double getPrice() {
         price = 0;
-        if(drinkSize == DrinkSize.SMALL){
+        if (drinkSize == DrinkSize.SMALL) {
             price += 2;
-        }
-        else if(drinkSize == DrinkSize.MEDIUM){
+        } else if (drinkSize == DrinkSize.MEDIUM) {
             price += 2.5;
-        }
-        else if(drinkSize == DrinkSize.LARGE){
+        } else if (drinkSize == DrinkSize.LARGE) {
             price += 3;
         }
         return price;
@@ -30,7 +28,18 @@ public class Drink implements Product {
         SMALL,
         MEDIUM,
         LARGE
-
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(drinkSize.toString().substring(0, 1) + drinkSize.toString().substring(1, drinkSize.toString().length()).toLowerCase());
+
+        for (int i = 0; i < 90; i++) {
+            sb.append("&nbsp");
+        }
+        sb.append(String.format("$%.2f <br>", getPrice()));
+        sb.append(name);
+        return sb.toString();
+    }
 }

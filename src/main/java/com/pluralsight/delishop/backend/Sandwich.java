@@ -24,6 +24,23 @@ public class Sandwich implements Product {
         toppings.add(topping);
     }
 
+    public ArrayList<Topping> getToppings() {
+        return toppings;
+    }
+
+    public double getBreadPrice() {
+        double price = 0;
+        if (sandwichSize == SandwichSize.FOURINCH) {
+            price += 5.50;
+        } else if (sandwichSize == SandwichSize.EIGHTINCH) {
+            price += 7;
+        } else if (sandwichSize == SandwichSize.TWELVEINCH) {
+            price += 8.50;
+        }
+
+        return price;
+    }
+
 
     @Override
     public double getPrice() {
@@ -58,11 +75,24 @@ public class Sandwich implements Product {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%s              $%.2f <br>", breadType, getPrice()));
+
+        if (breadType != BreadType.WRAP) {
+            sb.append(breadType.toString().substring(0, 1) + breadType.toString().substring(1, breadType.toString().length()).toLowerCase() + " Bread");
+        }
+        else{
+            sb.append(breadType.toString().substring(0, 1) + breadType.toString().substring(1, breadType.toString().length()).toLowerCase());
+        }
+
+        for (int i = 0; i < 90; i++) {
+            sb.append("&nbsp");
+        }
+
+        sb.append(String.format("$%-30.2f <br>", getBreadPrice()));
         sb.append(sandwichSize + "<br>");
-        for(Topping topping: toppings){
+        for (Topping topping : toppings) {
             sb.append(topping.toString() + "<br>");
         }
+
 
         return sb.toString();
     }

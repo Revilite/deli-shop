@@ -20,14 +20,13 @@ public class Order {
         }
         return totalPrice;
     }
-    public int getListLength(){
-        return items.size();
-    }
+
     @Override
     public String toString() {
-        return "Order{" +
-                "items=" + items +
-                ", totalPrice=" + getTotalPrice() +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        for(Product item : items){
+            sb.append(item.toString() + "<br>");
+        }
+        return sb.toString();
     }
 }

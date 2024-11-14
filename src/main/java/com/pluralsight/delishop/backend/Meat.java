@@ -31,12 +31,16 @@ public class Meat extends PremiumTopping {
 
     @Override
     public String toString() {
-        return "Meat{" +
-                "typeOfMeat=" + typeOfMeat +
-                ", price=" + getPrice() +
-                ", hasExtra=" + hasExtra +
-                ", size=" + size +
-                '}';
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(typeOfMeat.toString().substring(0, 1) + typeOfMeat.toString().substring(1, typeOfMeat.toString().length()).toLowerCase());
+
+        for (int i = 0; i < 90; i++) {
+            sb.append("&nbsp");
+        }
+        sb.append(String.format("$%.2f", getPrice()));
+
+        return sb.toString();
     }
 
     public enum TypeOfMeat {

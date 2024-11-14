@@ -26,10 +26,15 @@ public class RegularTopping extends Topping {
 
     @Override
     public String toString() {
-        return "RegularTopping{" +
-                "regularTopping=" + regularTopping +
-                ", hasExtra=" + hasExtra +
-                ", size=" + size +
-                '}';
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(regularTopping.toString().substring(0, 1) + regularTopping.toString().substring(1, regularTopping.toString().length()).toLowerCase());
+
+        for (int i = 0; i < 90; i++) {
+            sb.append("&nbsp");
+        }
+        sb.append(String.format("$%.2f", getPrice()));
+
+        return sb.toString();
     }
 }

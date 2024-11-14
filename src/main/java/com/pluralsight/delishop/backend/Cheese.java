@@ -30,12 +30,16 @@ public class Cheese extends PremiumTopping {
 
     @Override
     public String toString() {
-        return "Cheese{" +
-                "typeOfCheese=" + typeOfCheese +
-                ", price=" + getPrice() +
-                ", hasExtra=" + hasExtra +
-                ", size=" + size +
-                '}';
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(typeOfCheese.toString().substring(0, 1) + typeOfCheese.toString().substring(1, typeOfCheese.toString().length()).toLowerCase());
+
+        for (int i = 0; i < 90; i++) {
+            sb.append("&nbsp");
+        }
+        sb.append(String.format("$%.2f", getPrice()));
+
+        return sb.toString();
     }
 
     public enum TypeOfCheese{
