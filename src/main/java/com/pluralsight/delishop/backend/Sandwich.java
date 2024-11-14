@@ -55,6 +55,14 @@ public class Sandwich implements Product {
         WRAP
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Sandwich{" +
+                "toppings=" + toppings +
+                ", isToasted=" + isToasted +
+                ", breadType=" + breadType +
+                ", sandwichSize=" + sandwichSize +
+                ", price=" + getPrice() +
+                '}';
+    }
 }
