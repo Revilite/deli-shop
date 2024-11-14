@@ -19,10 +19,10 @@ public class Meat extends PremiumTopping {
             price = 1;
             if (hasExtra) price += .50;
         } else if (size == Sandwich.SandwichSize.EIGHTINCH) {
-            price = 1.5;
+            price = 2;
             if (hasExtra) price += 1;
         } else if (size == Sandwich.SandwichSize.TWELVEINCH) {
-            price = 2;
+            price = 3;
             if (hasExtra) price += 1.50;
         }
 

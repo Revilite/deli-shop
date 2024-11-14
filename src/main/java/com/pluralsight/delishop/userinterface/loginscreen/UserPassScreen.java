@@ -58,6 +58,7 @@ public class UserPassScreen extends javax.swing.JFrame {
         setTitle("Log in please :D");
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(42, 86, 28));
+        setIconImage(new ImageIcon("src/main/resources/images/titleIcon.jpg").getImage());
         setMaximumSize(new java.awt.Dimension(1920, 1080));
         setPreferredSize(new java.awt.Dimension(1920, 1080));
         setResizable(false);

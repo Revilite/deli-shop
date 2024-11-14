@@ -14,10 +14,6 @@ public class RegularTopping extends Topping {
         return regularTopping;
     }
 
-    public boolean hasExtra(){
-        return hasExtra;
-    }
-
 
     @Override
     public double getPrice() {

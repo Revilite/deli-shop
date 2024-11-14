@@ -13,10 +13,6 @@ public class Order {
         items.add(item);
     }
 
-    public ArrayList<Product> getItems() {
-        return items;
-    }
-
     public double getTotalPrice() {
         double totalPrice = 0;
         for (Product item : items) {

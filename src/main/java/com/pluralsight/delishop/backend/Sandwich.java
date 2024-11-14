@@ -103,7 +103,7 @@ public class Sandwich implements Product {
         } else {
             sb.append(breadType.toString().substring(0, 1) + breadType.toString().substring(1, breadType.toString().length()).toLowerCase());
         }
-        sb.append(String.format("$%-15.2f \n", getBreadPrice()));
+        sb.append(String.format("$%-15.2f \n", getPrice()));
         sb.append(sandwichSize + "\n");
         for (Topping topping : getToppings()) {
             sb.append(topping.toCSVString() + "\n");
