@@ -42,7 +42,15 @@ public class Cheese extends PremiumTopping {
         return sb.toString();
     }
 
-    public enum TypeOfCheese{
+    @Override
+    public String toCSVString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(typeOfCheese.toString().substring(0, 1) + typeOfCheese.toString().substring(1, typeOfCheese.toString().length()).toLowerCase());
+        sb.append(String.format("$%.2f", getPrice()));
+        return sb.toString();
+    }
+
+    public enum TypeOfCheese {
         AMERICAN,
         PROVOLONE,
         CHEDDAR,

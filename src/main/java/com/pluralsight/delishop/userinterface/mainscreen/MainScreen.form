@@ -254,6 +254,9 @@
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkoutButtonActionPerformed"/>
+                  </Events>
                 </Component>
                 <Container class="javax.swing.JLayeredPane" name="drinkMenu">
                   <AuxValues>
@@ -1442,7 +1445,6 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="orderItemsLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&lt;HTML&gt;PlaceHolder&lt;HTML&gt;"/>
                 <Property name="autoscrolls" type="boolean" value="true"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[897, 900]"/>

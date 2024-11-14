@@ -42,4 +42,14 @@ public class Drink implements Product {
         sb.append(name);
         return sb.toString();
     }
+
+    @Override
+    public String toCSVString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(drinkSize.toString().substring(0, 1) + drinkSize.toString().substring(1, drinkSize.toString().length()).toLowerCase());
+        sb.append(String.format("$%15.2f \n", getPrice()));
+        sb.append(name + "\n");
+        return sb.toString();
+
+    }
 }

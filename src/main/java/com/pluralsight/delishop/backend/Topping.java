@@ -12,5 +12,6 @@ public abstract class Topping {
 
     public abstract double getPrice();
 
+    public abstract String toCSVString();
 
 }

@@ -24,8 +24,16 @@ public class Order {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for(Product item : items){
+        for (Product item : items) {
             sb.append(item.toString() + "<br>");
+        }
+        return sb.toString();
+    }
+
+    public String toCSVString() {
+        StringBuilder sb = new StringBuilder();
+        for (Product item : items) {
+            sb.append(item.toCSVString());
         }
         return sb.toString();
     }

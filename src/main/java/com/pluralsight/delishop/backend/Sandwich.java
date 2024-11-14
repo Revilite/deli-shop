@@ -78,8 +78,7 @@ public class Sandwich implements Product {
 
         if (breadType != BreadType.WRAP) {
             sb.append(breadType.toString().substring(0, 1) + breadType.toString().substring(1, breadType.toString().length()).toLowerCase() + " Bread");
-        }
-        else{
+        } else {
             sb.append(breadType.toString().substring(0, 1) + breadType.toString().substring(1, breadType.toString().length()).toLowerCase());
         }
 
@@ -92,7 +91,22 @@ public class Sandwich implements Product {
         for (Topping topping : toppings) {
             sb.append(topping.toString() + "<br>");
         }
+        return sb.toString();
+    }
 
+    @Override
+    public String toCSVString() {
+        StringBuilder sb = new StringBuilder();
+        if (breadType != BreadType.WRAP) {
+            sb.append(breadType.toString().substring(0, 1) + breadType.toString().substring(1, breadType.toString().length()).toLowerCase() + " Bread");
+        } else {
+            sb.append(breadType.toString().substring(0, 1) + breadType.toString().substring(1, breadType.toString().length()).toLowerCase());
+        }
+        sb.append(String.format("$%15.2f \n", getBreadPrice()));
+        sb.append(sandwichSize + "\n");
+        for (Topping topping : toppings) {
+            sb.append(topping.toString() + "\n");
+        }
 
         return sb.toString();
     }

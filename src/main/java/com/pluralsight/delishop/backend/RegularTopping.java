@@ -37,4 +37,11 @@ public class RegularTopping extends Topping {
 
         return sb.toString();
     }
+    @Override
+    public String toCSVString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(regularTopping.toString().substring(0, 1) + regularTopping.toString().substring(1, regularTopping.toString().length()).toLowerCase());
+        sb.append(String.format("$%.2f", getPrice()));
+        return sb.toString();
+    }
 }

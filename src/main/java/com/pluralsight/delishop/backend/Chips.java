@@ -26,4 +26,15 @@ public class Chips implements Product {
         sb.append(String.format("$%.2f <br>", getPrice()));
         return sb.toString();
     }
+
+    @Override
+    public String toCSVString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(name);
+        sb.append(String.format("               $%-15.2f \n", getPrice()));
+
+
+        return sb.toString();
+    }
 }
