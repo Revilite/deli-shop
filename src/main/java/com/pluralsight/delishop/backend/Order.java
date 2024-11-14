@@ -4,10 +4,8 @@ import java.util.ArrayList;
 
 public class Order {
     private ArrayList<Product> items;
-    private double totalPrice;
 
     public Order() {
-        totalPrice = 0;
         items = new ArrayList<>();
     }
 
@@ -16,12 +14,15 @@ public class Order {
     }
 
     public double getTotalPrice() {
+        double totalPrice = 0;
         for (Product item : items) {
             totalPrice += item.getPrice();
         }
         return totalPrice;
     }
-
+    public int getListLength(){
+        return items.size();
+    }
     @Override
     public String toString() {
         return "Order{" +

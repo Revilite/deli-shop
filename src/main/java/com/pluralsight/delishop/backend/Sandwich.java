@@ -57,12 +57,13 @@ public class Sandwich implements Product {
 
     @Override
     public String toString() {
-        return "Sandwich{" +
-                "toppings=" + toppings +
-                ", isToasted=" + isToasted +
-                ", breadType=" + breadType +
-                ", sandwichSize=" + sandwichSize +
-                ", price=" + getPrice() +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("%s              $%.2f <br>", breadType, getPrice()));
+        sb.append(sandwichSize + "<br>");
+        for(Topping topping: toppings){
+            sb.append(topping.toString() + "<br>");
+        }
+
+        return sb.toString();
     }
 }

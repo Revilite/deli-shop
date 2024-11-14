@@ -68,8 +68,6 @@ public class MainScreen extends javax.swing.JFrame {
         toastedGroup = new javax.swing.ButtonGroup();
         drinkSizesGroup = new javax.swing.ButtonGroup();
         jLayeredPane1 = new javax.swing.JLayeredPane();
-        orderContainer = new javax.swing.JScrollPane();
-        orderItems = new javax.swing.JLabel();
         allButtons = new javax.swing.JLayeredPane();
         emptyMenu = new javax.swing.JLayeredPane();
         buttonMenu = new javax.swing.JLayeredPane();
@@ -132,6 +130,9 @@ public class MainScreen extends javax.swing.JFrame {
         yesToastedButton = new javax.swing.JRadioButton();
         noToastedButton = new javax.swing.JRadioButton();
         addSandwich = new javax.swing.JButton();
+        orderMenu = new javax.swing.JLayeredPane();
+        orderItemsLabel = new javax.swing.JLabel();
+        totalPriceLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Deli POS System");
@@ -141,12 +142,6 @@ public class MainScreen extends javax.swing.JFrame {
         jLayeredPane1.setBackground(new java.awt.Color(0, 0, 0));
         jLayeredPane1.setOpaque(true);
         jLayeredPane1.setPreferredSize(new java.awt.Dimension(1920, 1080));
-
-        orderContainer.setBackground(new java.awt.Color(200, 200, 200));
-        orderContainer.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-
-        orderItems.setText("Place Holder");
-        orderContainer.setViewportView(orderItems);
 
         allButtons.setBackground(new java.awt.Color(200, 200, 200));
         allButtons.setForeground(new java.awt.Color(200, 200, 200));
@@ -1048,27 +1043,60 @@ public class MainScreen extends javax.swing.JFrame {
 
         emptyMenu.setVisible(true);
 
-        jLayeredPane1.setLayer(orderContainer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        orderMenu.setBackground(new java.awt.Color(255, 255, 255));
+        orderMenu.setOpaque(true);
+
+        orderItemsLabel.setText("<HTML>PlaceHolder<HTML>");
+        orderItemsLabel.setAutoscrolls(true);
+        orderItemsLabel.setMaximumSize(new java.awt.Dimension(897, 900));
+        orderItemsLabel.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+        totalPriceLabel.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        totalPriceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        totalPriceLabel.setText("Total Price: $0.00");
+        totalPriceLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        orderMenu.setLayer(orderItemsLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        orderMenu.setLayer(totalPriceLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout orderMenuLayout = new javax.swing.GroupLayout(orderMenu);
+        orderMenu.setLayout(orderMenuLayout);
+        orderMenuLayout.setHorizontalGroup(
+                orderMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(orderMenuLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(orderItemsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
+                                .addContainerGap())
+                        .addComponent(totalPriceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        orderMenuLayout.setVerticalGroup(
+                orderMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(orderMenuLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(orderItemsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 897, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(totalPriceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         jLayeredPane1.setLayer(allButtons, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(orderMenu, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
         jLayeredPane1Layout.setHorizontalGroup(
                 jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(orderContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(34, 34, 34)
+                                .addGap(40, 40, 40)
+                                .addComponent(orderMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(72, 72, 72)
                                 .addComponent(allButtons, javax.swing.GroupLayout.PREFERRED_SIZE, 1240, Short.MAX_VALUE)
                                 .addGap(18, 18, 18))
         );
         jLayeredPane1Layout.setVerticalGroup(
                 jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(allButtons, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(orderContainer)
-                                .addContainerGap())
+                        .addComponent(allButtons, javax.swing.GroupLayout.DEFAULT_SIZE, 1255, Short.MAX_VALUE)
+                        .addComponent(orderMenu)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1414,7 +1442,9 @@ public class MainScreen extends javax.swing.JFrame {
     private void addSandwichActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSandwichActionPerformed
         Sandwich sandwich = new Sandwich(sandwichSize, isToasted, breadType, toppings);
         order.addItem(sandwich);
-        orderItems.setText(sandwich.toString());
+        orderItemsLabel.setText("<HTML>" + orderItemsLabel.getText() + sandwich + "</HTML>");
+        totalPriceLabel.setText(String.format("Total Price: %.2f", order.getTotalPrice()));
+
     }//GEN-LAST:event_addSandwichActionPerformed
 
 
@@ -1471,8 +1501,8 @@ public class MainScreen extends javax.swing.JFrame {
     private javax.swing.JToggleButton mustardButton;
     private javax.swing.JRadioButton noToastedButton;
     private javax.swing.JToggleButton onionButton;
-    private javax.swing.JScrollPane orderContainer;
-    private javax.swing.JLabel orderItems;
+    private javax.swing.JLabel orderItemsLabel;
+    private javax.swing.JLayeredPane orderMenu;
     private javax.swing.JToggleButton pepperButton;
     private javax.swing.JToggleButton pickleButton;
     private javax.swing.JLabel preimumLabel;
@@ -1498,6 +1528,7 @@ public class MainScreen extends javax.swing.JFrame {
     private javax.swing.ButtonGroup toastedGroup;
     private javax.swing.JPanel toastedPanel;
     private javax.swing.JToggleButton tomatoButton;
+    private javax.swing.JLabel totalPriceLabel;
     private javax.swing.JRadioButton twelveInchButton;
     private javax.swing.ButtonGroup typeOfBreadGroup;
     private javax.swing.JLabel typeOfBreadLabel;
