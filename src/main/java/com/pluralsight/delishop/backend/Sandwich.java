@@ -3,7 +3,7 @@ package com.pluralsight.delishop.backend;
 import java.util.ArrayList;
 
 public class Sandwich implements Product {
-    protected ArrayList<Topping> toppings;
+    private ArrayList<Topping> toppings;
     protected boolean isToasted;
     protected BreadType breadType;
     protected SandwichSize sandwichSize;
@@ -72,8 +72,9 @@ public class Sandwich implements Product {
         WRAP
     }
 
-    @Override
+//    @Override
     public String toString() {
+//    public String toStrring(){
         StringBuilder sb = new StringBuilder();
 
         if (breadType != BreadType.WRAP) {
@@ -86,7 +87,7 @@ public class Sandwich implements Product {
             sb.append("&nbsp");
         }
 
-        sb.append(String.format("$%-30.2f <br>", getBreadPrice()));
+        sb.append(String.format("$%-30.2f <br>", getPrice()));
         sb.append(sandwichSize + "<br>");
         for (Topping topping : toppings) {
             sb.append(topping.toString() + "<br>");
@@ -102,10 +103,10 @@ public class Sandwich implements Product {
         } else {
             sb.append(breadType.toString().substring(0, 1) + breadType.toString().substring(1, breadType.toString().length()).toLowerCase());
         }
-        sb.append(String.format("$%15.2f \n", getBreadPrice()));
+        sb.append(String.format("$%-15.2f \n", getBreadPrice()));
         sb.append(sandwichSize + "\n");
-        for (Topping topping : toppings) {
-            sb.append(topping.toString() + "\n");
+        for (Topping topping : getToppings()) {
+            sb.append(topping.toCSVString() + "\n");
         }
 
         return sb.toString();

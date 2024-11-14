@@ -1210,9 +1210,8 @@ public class MainScreen extends javax.swing.JFrame {
     private Sandwich.BreadType breadType;
     private ArrayList<Topping> toppings = new ArrayList<>();
     private boolean isToasted;
-    private String drinkName;
+
     private Drink.DrinkSize drinkSize;
-    private String chipName;
 
     private void sandwichButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sandwichButtonActionPerformed
         if (sandwichMenu.isVisible()) {
@@ -1254,7 +1253,6 @@ public class MainScreen extends javax.swing.JFrame {
 
             });
         }
-        toppings.stream().forEach(t -> System.out.println(t.toString()));
     }
 
     Cheese cheese;
@@ -1278,7 +1276,6 @@ public class MainScreen extends javax.swing.JFrame {
                 }
             });
         }
-        toppings.stream().forEach(t -> System.out.println(t.toString()));
     }
 
     RegularTopping regTopping;
@@ -1303,7 +1300,6 @@ public class MainScreen extends javax.swing.JFrame {
             });
 
         }
-        toppings.stream().forEach(t -> System.out.println(t.toString()));
     }
 
     private void steakButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_steakButtonActionPerformed
@@ -1500,8 +1496,8 @@ public class MainScreen extends javax.swing.JFrame {
     private void addSandwichActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSandwichActionPerformed
 
         if (sandwichSize != null && breadType != null) {
-            Sandwich sandwich = new Sandwich(sandwichSize, isToasted, breadType, toppings);
-            addToOrder(sandwich);
+            addToOrder(new Sandwich(sandwichSize, isToasted, breadType, toppings));
+
         }
 
     }//GEN-LAST:event_addSandwichActionPerformed
@@ -1547,13 +1543,14 @@ public class MainScreen extends javax.swing.JFrame {
 
 
     private void addToOrder(Product item) {
+
         order.addItem(item);
         orderItemsLabel.setText("<HTML>" + order.toString() + "</HTML>");
         totalPriceLabel.setText(String.format("Total Price: %.2f", order.getTotalPrice()));
-        sandwichSize = null;
-        isToasted = false;
-        breadType = null;
-        toppings.clear();
+        this.sandwichSize = null;
+        this.isToasted = false;
+        this.breadType = null;
+        this.toppings = new ArrayList<>();
 
         for (JToggleButton button : allSandwichButtons) {
             button.setSelected(false);
