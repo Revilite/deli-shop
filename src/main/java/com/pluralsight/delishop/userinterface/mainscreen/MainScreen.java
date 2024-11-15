@@ -1239,6 +1239,7 @@ public class MainScreen extends javax.swing.JFrame {
 
     private void setDrinkSize(Drink.DrinkSize drinkSize) {
         this.drinkSize = drinkSize;
+        addDrinkButton.setEnabled(true);
     }
 
     private void setBreadType(Sandwich.BreadType breadType) {
