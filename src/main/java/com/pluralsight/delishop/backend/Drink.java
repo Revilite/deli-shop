@@ -33,11 +33,9 @@ public class Drink implements Product {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(drinkSize.toString().substring(0, 1) + drinkSize.toString().substring(1, drinkSize.toString().length()).toLowerCase());
+        sb.append(drinkSize.toString().charAt(0) + drinkSize.toString().substring(1).toLowerCase());
 
-        for (int i = 0; i < 90; i++) {
-            sb.append("&nbsp");
-        }
+        sb.append("&nbsp".repeat(90));
         sb.append(String.format("$%.2f <br>", getPrice()));
         sb.append(" -" + name);
         return sb.toString();
@@ -46,8 +44,8 @@ public class Drink implements Product {
     @Override
     public String toCSVString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(drinkSize.toString().substring(0, 1) + drinkSize.toString().substring(1, drinkSize.toString().length()).toLowerCase());
-        sb.append(String.format("$%15.2f \n", getPrice()));
+        sb.append(drinkSize.toString().charAt(0) + drinkSize.toString().substring(1).toLowerCase());
+        sb.append(String.format("     $%.2f \n", getPrice()));
         sb.append(name + "\n");
         return sb.toString();
 

@@ -1,0 +1,4 @@
+Ticket Number: 1001
+Medium     $           2.50 
+Name of the Drink
+Total Price: $2.50           

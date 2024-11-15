@@ -28,20 +28,6 @@ public class Sandwich implements Product {
         return toppings;
     }
 
-    public double getBreadPrice() {
-        double price = 0;
-        if (sandwichSize == SandwichSize.FOURINCH) {
-            price += 5.50;
-        } else if (sandwichSize == SandwichSize.EIGHTINCH) {
-            price += 7;
-        } else if (sandwichSize == SandwichSize.TWELVEINCH) {
-            price += 8.50;
-        }
-
-        return price;
-    }
-
-
     @Override
     public double getPrice() {
         price = 0;
@@ -60,7 +46,7 @@ public class Sandwich implements Product {
     }
 
     public enum SandwichSize {
-        FOURINCH, EIGHTINCH, TWELVEINCH;
+        FOURINCH, EIGHTINCH, TWELVEINCH
     }
 
     public enum BreadType {
@@ -80,14 +66,12 @@ public class Sandwich implements Product {
         }
 
         if (breadType != BreadType.WRAP) {
-            sb.append(breadType.toString().substring(0, 1) + breadType.toString().substring(1, breadType.toString().length()).toLowerCase() + " Bread");
+            sb.append(breadType.toString().charAt(0) + breadType.toString().substring(1).toLowerCase() + " Bread");
         } else {
-            sb.append(breadType.toString().substring(0, 1) + breadType.toString().substring(1, breadType.toString().length()).toLowerCase());
+            sb.append(breadType.toString().charAt(0) + breadType.toString().substring(1).toLowerCase());
         }
 
-        for (int i = 0; i < 90; i++) {
-            sb.append("&nbsp");
-        }
+        sb.append("&nbsp".repeat(90));
 
         sb.append(String.format("$%.2f <br>", getPrice()));
 
@@ -108,9 +92,9 @@ public class Sandwich implements Product {
             sb.append("12''");
         }
         if (breadType != BreadType.WRAP) {
-            sb.append(breadType.toString().substring(0, 1) + breadType.toString().substring(1, breadType.toString().length()).toLowerCase() + " Bread");
+            sb.append(breadType.toString().charAt(0) + breadType.toString().substring(1).toLowerCase() + " Bread");
         } else {
-            sb.append(breadType.toString().substring(0, 1) + breadType.toString().substring(1, breadType.toString().length()).toLowerCase());
+            sb.append(breadType.toString().charAt(0) + breadType.toString().substring(1).toLowerCase());
         }
         sb.append(String.format("     $%.2f \n", getPrice()));
         sb.append(sandwichSize + "\n");

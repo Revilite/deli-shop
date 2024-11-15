@@ -24,11 +24,9 @@ public class RegularTopping extends Topping {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append(regularTopping.toString().substring(0, 1) + regularTopping.toString().substring(1, regularTopping.toString().length()).toLowerCase());
+        sb.append(regularTopping.toString().charAt(0) + regularTopping.toString().substring(1).toLowerCase());
 
-        for (int i = 0; i < 90; i++) {
-            sb.append("&nbsp");
-        }
+        sb.append("&nbsp".repeat(90));
         sb.append(String.format("$%.2f", getPrice()));
 
         return sb.toString();
@@ -36,8 +34,8 @@ public class RegularTopping extends Topping {
     @Override
     public String toCSVString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(regularTopping.toString().substring(0, 1) + regularTopping.toString().substring(1, regularTopping.toString().length()).toLowerCase());
-        sb.append(String.format("$%.2f", getPrice()));
+        sb.append(regularTopping.toString().charAt(0) + regularTopping.toString().substring(1).toLowerCase());
+        sb.append(String.format("     $%.2f", getPrice()));
         return sb.toString();
     }
 }

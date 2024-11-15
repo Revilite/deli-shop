@@ -20,9 +20,7 @@ public class Chips implements Product {
         StringBuilder sb = new StringBuilder();
 
         sb.append(name);
-        for (int i = 0; i < 90; i++) {
-            sb.append("&nbsp");
-        }
+        sb.append("&nbsp".repeat(90));
         sb.append(String.format("$%.2f <br>", getPrice()));
         return sb.toString();
     }
@@ -32,7 +30,7 @@ public class Chips implements Product {
         StringBuilder sb = new StringBuilder();
 
         sb.append(name);
-        sb.append(String.format("               $%-15.2f \n", getPrice()));
+        sb.append(String.format("     $%.2f \n", getPrice()));
 
 
         return sb.toString();

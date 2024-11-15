@@ -33,11 +33,9 @@ public class Meat extends PremiumTopping {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append(typeOfMeat.toString().substring(0, 1) + typeOfMeat.toString().substring(1, typeOfMeat.toString().length()).toLowerCase());
+        sb.append(typeOfMeat.toString().charAt(0) + typeOfMeat.toString().substring(1).toLowerCase());
 
-        for (int i = 0; i < 90; i++) {
-            sb.append("&nbsp");
-        }
+        sb.append("&nbsp".repeat(90));
         sb.append(String.format("$%.2f", getPrice()));
 
         return sb.toString();
@@ -46,8 +44,8 @@ public class Meat extends PremiumTopping {
     @Override
     public String toCSVString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(typeOfMeat.toString().substring(0, 1) + typeOfMeat.toString().substring(1, typeOfMeat.toString().length()).toLowerCase());
-        sb.append(String.format("$%.2f", getPrice()));
+        sb.append(typeOfMeat.toString().charAt(0) + typeOfMeat.toString().substring(1).toLowerCase());
+        sb.append(String.format("     $%.2f", getPrice()));
         return sb.toString();
     }
 
@@ -57,6 +55,6 @@ public class Meat extends PremiumTopping {
         SALAMI,
         ROAST_BEEF,
         CHICKEN,
-        BACON;
+        BACON
     }
 }

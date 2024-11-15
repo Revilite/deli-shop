@@ -32,11 +32,8 @@ public class Cheese extends PremiumTopping {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append(typeOfCheese.toString().substring(0, 1) + typeOfCheese.toString().substring(1, typeOfCheese.toString().length()).toLowerCase());
-
-        for (int i = 0; i < 90; i++) {
-            sb.append("&nbsp");
-        }
+        sb.append(typeOfCheese.toString().charAt(0) + typeOfCheese.toString().substring(1).toLowerCase());
+        sb.append("&nbsp".repeat(90));
         sb.append(String.format("$%.2f", getPrice()));
 
         return sb.toString();
@@ -45,8 +42,8 @@ public class Cheese extends PremiumTopping {
     @Override
     public String toCSVString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(typeOfCheese.toString().substring(0, 1) + typeOfCheese.toString().substring(1, typeOfCheese.toString().length()).toLowerCase());
-        sb.append(String.format("$%.2f", getPrice()));
+        sb.append(typeOfCheese.toString().charAt(0) + typeOfCheese.toString().substring(1).toLowerCase());
+        sb.append(String.format("     $%.2f", getPrice()));
         return sb.toString();
     }
 
