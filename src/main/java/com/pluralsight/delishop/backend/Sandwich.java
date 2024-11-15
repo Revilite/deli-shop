@@ -60,22 +60,24 @@ public class Sandwich implements Product {
     }
 
     public enum SandwichSize {
-        FOURINCH,
-        EIGHTINCH,
-        TWELVEINCH;
+        FOURINCH, EIGHTINCH, TWELVEINCH;
     }
 
     public enum BreadType {
-        WHITE,
-        WHEAT,
-        RYE,
-        WRAP
+        WHITE, WHEAT, RYE, WRAP
     }
 
-//    @Override
+    @Override
     public String toString() {
-//    public String toStrring(){
+
         StringBuilder sb = new StringBuilder();
+        if (sandwichSize == SandwichSize.FOURINCH) {
+            sb.append("4''");
+        } else if (sandwichSize == SandwichSize.EIGHTINCH) {
+            sb.append("8''");
+        } else {
+            sb.append("12''");
+        }
 
         if (breadType != BreadType.WRAP) {
             sb.append(breadType.toString().substring(0, 1) + breadType.toString().substring(1, breadType.toString().length()).toLowerCase() + " Bread");
@@ -87,10 +89,10 @@ public class Sandwich implements Product {
             sb.append("&nbsp");
         }
 
-        sb.append(String.format("$%-30.2f <br>", getPrice()));
-        sb.append(sandwichSize + "<br>");
+        sb.append(String.format("$%.2f <br>", getPrice()));
+
         for (Topping topping : toppings) {
-            sb.append(topping.toString() + "<br>");
+            sb.append("  -  " + topping.toString() + "<br>");
         }
         return sb.toString();
     }
@@ -98,15 +100,22 @@ public class Sandwich implements Product {
     @Override
     public String toCSVString() {
         StringBuilder sb = new StringBuilder();
+        if (sandwichSize == SandwichSize.FOURINCH) {
+            sb.append("4''");
+        } else if (sandwichSize == SandwichSize.EIGHTINCH) {
+            sb.append("8''");
+        } else {
+            sb.append("12''");
+        }
         if (breadType != BreadType.WRAP) {
             sb.append(breadType.toString().substring(0, 1) + breadType.toString().substring(1, breadType.toString().length()).toLowerCase() + " Bread");
         } else {
             sb.append(breadType.toString().substring(0, 1) + breadType.toString().substring(1, breadType.toString().length()).toLowerCase());
         }
-        sb.append(String.format("$%-15.2f \n", getPrice()));
+        sb.append(String.format("     $%.2f \n", getPrice()));
         sb.append(sandwichSize + "\n");
         for (Topping topping : getToppings()) {
-            sb.append(topping.toCSVString() + "\n");
+            sb.append("- " + topping.toCSVString() + "\n");
         }
 
         return sb.toString();

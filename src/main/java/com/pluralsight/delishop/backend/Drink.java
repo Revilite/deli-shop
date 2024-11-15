@@ -39,7 +39,7 @@ public class Drink implements Product {
             sb.append("&nbsp");
         }
         sb.append(String.format("$%.2f <br>", getPrice()));
-        sb.append(name);
+        sb.append(" -" + name);
         return sb.toString();
     }
 
