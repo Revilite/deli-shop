@@ -24,5 +24,14 @@ checkout button. The first 4 have each individual screens where the user can inp
 clears the order and prints the order to a receipt in the receipt folder. 
 
 
+## UML Diagram
+![img.png](UML.png)
+
+This is the UML for the creations of each product item. I want to highlight the fact the interface product that is used 
+in each class that will show up in the order. Also, the fact that Topping is not a subclass to sandwich. In my head it 
+doesn't make sense to sell toppings by themselves, so they will not be able to order it by themselves. the Enums on the right
+are nested Enums to make some less cluttered class structures since their relativity simple. OrderFileHandler is specifically 
+for making printable receipt files and adding them to the folder.
+
 ## Author 
 Jacob :)

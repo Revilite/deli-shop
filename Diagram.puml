@@ -12,7 +12,6 @@ class com.pluralsight.delishop.backend.Sandwich {
 + SandwichSize getSandwichSize()
 + void addTopping(Topping)
 + ArrayList<Topping> getToppings()
-+ double getBreadPrice()
 + double getPrice()
 + String toString()
 + String toCSVString()
@@ -77,10 +76,17 @@ enum com.pluralsight.delishop.backend.DrinkSize {
 +  LARGE
 }
 
+class com.pluralsight.delishop.backend.Sauce {
+~ RegularToppings sauce
++ double getPrice()
++ String toCSVString()
++ String toString()
+}
+
+
 class com.pluralsight.delishop.backend.RegularTopping {
 # RegularToppings regularTopping
 + RegularToppings getRegularTopping()
-+ boolean hasExtra()
 + double getPrice()
 + String toString()
 + String toCSVString()
@@ -114,8 +120,10 @@ abstract class com.pluralsight.delishop.backend.Topping {
 
 
 class com.pluralsight.delishop.backend.OrderFileHandler {
-+ {static} void createReceipt(Order)
+~ int counter
++ void createReceipt(Order)
 }
+
 
 class com.pluralsight.delishop.backend.Order {
 - ArrayList<Product> items
@@ -134,6 +142,7 @@ com.pluralsight.delishop.backend.Product <|.. com.pluralsight.delishop.backend.S
 com.pluralsight.delishop.backend.PremiumTopping <|-- com.pluralsight.delishop.backend.Cheese
 com.pluralsight.delishop.backend.Product <|.. com.pluralsight.delishop.backend.Chips
 com.pluralsight.delishop.backend.Product <|.. com.pluralsight.delishop.backend.Drink
+com.pluralsight.delishop.backend.Product <|.. com.pluralsight.delishop.backend.Sauce
 com.pluralsight.delishop.backend.Topping <|-- com.pluralsight.delishop.backend.RegularTopping
 com.pluralsight.delishop.backend.PremiumTopping <|-- com.pluralsight.delishop.backend.Meat
 @enduml
